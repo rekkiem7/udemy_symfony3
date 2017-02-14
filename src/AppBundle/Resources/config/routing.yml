@@ -1,0 +1,9 @@
+pruebas_index:
+    path: /pruebas/{lang}/{name}/{page}/{lastname}
+    defaults: {_controller: AppBundle:Pruebas:index}
+    methods: [GET,POST]
+    requirements:
+        name: \w+
+        lastname: "[a-zA-Z]*"
+        page: \d+
+        lang: es|en|fr
