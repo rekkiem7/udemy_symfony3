@@ -12,11 +12,16 @@ class PruebasController extends Controller
     public function indexAction(Request $request,$lang,$name,$page,$lastname)
     {
         // replace this example code with whatever you need
-        $productos = array("producto"=>"Consola","precio"=>2);
+       $productos=array(array("producto"=>"consola 1", "precio"=>1000),
+                    array("producto"=>"consola 2", "precio"=>2000),
+                    array("producto"=>"consola 3", "precio"=>3000),
+                    array("producto"=>"consola 4", "precio"=>4000));
         
+       $fruta=array("manzana"=>"golden","pera"=>"rica");
         return $this->render('AppBundle:Pruebas:index.html.twig', array(
             'texto'=> $name.'-'.$page,
-            'productos'=> $productos
+            'productos'=> $productos,
+            'frutas'=>$fruta
         ));
     }
     

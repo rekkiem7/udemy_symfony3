@@ -2,4 +2,46 @@
 {% block container %}
     {{parent()}}
     {{texto}}
+    {#
+        esto es un comentario
+    #}
+    <hr/>
+{{frutas.pera}}
+{% if frutas.pera=="rica"%}
+    {{frutas.manzana}}
+{%endif%}
+{% set variable="hola twig" %}
+    <hr/>
+{{variable}}
+    <hr/>
+    {% if productos|length > 0%}
+    <ul>
+    {% for producto in productos %}
+        <li>{{producto.producto}} - {{producto.precio}}</li>
+    {%endfor%}
+    </ul>
+    {%endif%}
+    <hr/>
+    {% set fecha = date() %}
+    {{dump(fecha)}}
+    <hr/>
+    {% set fecha = date("-2 days","Europe/Madrid") %}
+    {{dump(fecha)}}
+    <hr/>
+    {{include('AppBundle:Pruebas:partial.html.twig')}}
+    {{max([77,99,89])}}<br>
+    {{min([77,99,89])}}<br>
+    {{random(1000)}}<br>
+    {{random(["alternativa","verdadero o falso","desarrollo"])}}<br>
+    <hr/>
+        {{generateTable(productos) | raw}}
+    <hr/>
+    {% for i in range(0,25)%}
+        {{i}}<br>
+    {%endfor%}
+    <hr/>
+    {% for i in range(0,25,3)%}
+        {{i}}<br>
+    {%endfor%}
+    
 {% endblock %}
