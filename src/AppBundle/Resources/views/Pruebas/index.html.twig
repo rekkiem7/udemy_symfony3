@@ -28,6 +28,10 @@
     {% set fecha = date("-2 days","Europe/Madrid") %}
     {{dump(fecha)}}
     <hr/>
+    {% set fecha = date("-2 days","Europe/Madrid") %}
+    {% set texto = "    fdfsafd,"%}
+    {{fecha.date}} | {{fecha.date|date("d-m-Y")}} | {{texto|trim(",")}} | {{"cadena de texto"|addText(2)}}
+    <hr/>
     {{include('AppBundle:Pruebas:partial.html.twig')}}
     {{max([77,99,89])}}<br>
     {{min([77,99,89])}}<br>
